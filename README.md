@@ -12,6 +12,10 @@
 
 - sparkjava
 
+## websocket
+
+ws://127.0.0.1:9000/chat/`?email=${store.getters.user.email}&token=${store.getters.user.token}`
+
 ## 用户管理 /user
 
 ### 用户登录 POST /user/login
