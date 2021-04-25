@@ -95,7 +95,8 @@ public class UserController {
 
     public static String userInfo(Request req, Response res) {
         var email = req.queryParams("email");
-        if (email == null) return utils.Response.Error(res, 2000, "参数错误");
+        if (email == null)
+            return utils.Response.Error(res, 2000, "参数错误");
 
         // 从redis中读取用户信息
         var redis = utils.Redis.getJedis();
@@ -109,7 +110,8 @@ public class UserController {
             user = (new UserService().find(user));
         }
 
-        if (user.getEmail() == null) return utils.Response.Error(res, 2000, "查找的用户不存在");
+        if (user.getEmail() == null)
+            return utils.Response.Error(res, 2000, "查找的用户不存在");
         return utils.Response.Success(res, shieldPrivate(user));
     }
 
@@ -117,7 +119,8 @@ public class UserController {
     public static String searchFriend(Request req, Response res) {
         var info = req.queryParams("info");
 
-        if (info == null) return utils.Response.Error(res, 2000, "参数错误");
+        if (info == null)
+            return utils.Response.Error(res, 2000, "参数错误");
 
         List<UserModel> userList = new ArrayList<>();
         userList = (new UserService()).searchFriend(info);
@@ -151,36 +154,37 @@ public class UserController {
         redis.close();
         return utils.Response.Success(res, shieldPrivate(user));
     }
-//    public static String editUser(Request req, Response res) {
-//        var body = (new Gson()).fromJson(req.body(), UserModel.class);
-//        // 检测参数是否为空
-//        if (body.getToken() == null || body.getEmail() == null) {
-//            return utils.Response.Error(res, 1999, "Email不能为空，或用户未登录");
-//        }
-//
-//        var redis = Redis.getJedis();
-//        var user = (new Gson()).fromJson(redis.get(body.getEmail()), UserModel.class);
-//        if (user.getEmail() == null) {
-//            return utils.Response.Error(res, 2000, "用户未登录");
-//        }
-//
-//        // 检测token是否合法
-//        if (!user.getToken().equals(body.getToken())) {
-//            return utils.Response.Error(res, 2001, "非法凭证");
-//        }
-//
-//        user.setUname(body.getUname());
-//        user.setAvatar(body.getAvatar());
-//
-//        // 更新用户信息
-//        var userSer = new UserService();
-//        if (!userSer.update(user)) {
-//            return utils.Response.Error(res, 2002, "用户未登录");
-//        }
-//        redis.set(user.getEmail(), (new Gson()).toJson(user));
-//        redis.close();
-//        return utils.Response.Success(res, shieldPrivate(user));
-//    }
+    // public static String editUser(Request req, Response res) {
+    // var body = (new Gson()).fromJson(req.body(), UserModel.class);
+    // // 检测参数是否为空
+    // if (body.getToken() == null || body.getEmail() == null) {
+    // return utils.Response.Error(res, 1999, "Email不能为空，或用户未登录");
+    // }
+    //
+    // var redis = Redis.getJedis();
+    // var user = (new Gson()).fromJson(redis.get(body.getEmail()),
+    // UserModel.class);
+    // if (user.getEmail() == null) {
+    // return utils.Response.Error(res, 2000, "用户未登录");
+    // }
+    //
+    // // 检测token是否合法
+    // if (!user.getToken().equals(body.getToken())) {
+    // return utils.Response.Error(res, 2001, "非法凭证");
+    // }
+    //
+    // user.setUname(body.getUname());
+    // user.setAvatar(body.getAvatar());
+    //
+    // // 更新用户信息
+    // var userSer = new UserService();
+    // if (!userSer.update(user)) {
+    // return utils.Response.Error(res, 2002, "用户未登录");
+    // }
+    // redis.set(user.getEmail(), (new Gson()).toJson(user));
+    // redis.close();
+    // return utils.Response.Success(res, shieldPrivate(user));
+    // }
 
     // 与会下线
     public static void userOffLine(String email) {
