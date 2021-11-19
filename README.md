@@ -6,8 +6,8 @@
 - Java课程 & 软件架构课程期末成绩拿到“优”
 
 ## 项目地址
-- 前端：https://gitee.com/hexiaodai/im_template
-- 后端：https://gitee.com/hexiaodai/im_service
+- 前端：https://github.com/hexiaodai/im_template.git
+- 后端：https://github.com/hexiaodai/im_service.git
 
 ## 开发环境
 
