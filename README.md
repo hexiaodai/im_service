@@ -1,4 +1,9 @@
-[TOC]
+## 湖理，Java课程期末作业 & 软件架构期末作业
+
+## 收获
+- 充分的理解 HTTP、Websocket协议之间的关系和区别
+- 了解 Redis 的基本用法，并且在实际项目中使用 Redis 处理用户的离线消息
+- Java课程 & 软件架构课程期末成绩拿到“优”
 
 ## 项目地址
 - 前端：https://gitee.com/hexiaodai/im_template
@@ -34,7 +39,7 @@
 
 ## websocket
 
-```json
+```
 ws://127.0.0.1:9000/chat?email=email&token=token
 ```
 
@@ -46,8 +51,8 @@ Request
 
 ```json
 {
-    email: "hjm@163.com",
-    password: "hjm0819"
+    "email": "hjm@163.com",
+    "password": "hjm0819"
 }
 ```
 
@@ -55,17 +60,17 @@ Response 200
 
 ```json
 {
-    code: 0,
-    msg: "",
-    data: {
-        id: 29,
-        email: "hjm@163.com",
-        uname: "原来是小民同学呀",
-        avatar: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-        createAt: 1618914288981,
-        deleteTimestamp: 0,
-        token: "6E3E662DFD10ADB61206342FB8922BEA",
-        online: 1   
+    "code": 0,
+    "msg": "",
+    "data": {
+        "id": 29,
+        "email": "hjm@163.com",
+        "uname": "原来是小民同学呀",
+        "avatar": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+        "createAt": 1618914288981,
+        "deleteTimestamp": 0,
+        "token": "6E3E662DFD10ADB61206342FB8922BEA",
+        "online": 1   
     }   
 }
 ```
@@ -76,10 +81,10 @@ Request
 
 ```json
 {
-    email: "test2@163.com",
-    password: "test2021",
-    password2: "test2021",
-    uname: "test123"
+    "email": "test2@163.com",
+    "password": "test2021",
+    "password2": "test2021",
+    "uname": "test123"
 }
 ```
 
@@ -87,17 +92,17 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: {
-        createAt: 1618993248102,
-        deleteTimestamp: 0,
-        email: "test2@163.com",
-        id: 0,
-        online: 1,
-        token: "548D7B319EF9AB24CD91FBB8031B44E1",
-        uname: "test123"
+    "code": 0,
+    "data": {
+        "createAt": 1618993248102,
+        "deleteTimestamp": 0,
+        "email": "test2@163.com",
+        "id": 0,
+        "online": 1,
+        "token": "548D7B319EF9AB24CD91FBB8031B44E1",
+        "uname": "test123"
     },
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -107,7 +112,7 @@ Request
 
 ```json
 {
-    info: "hjm",
+    "info": "hjm",
 }
 ```
 
@@ -115,19 +120,19 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: [
-        0: {
-            avatar: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-            createAt: 1618914288981,
-            deleteTimestamp: 0,
-            email: "hjm@163.com",
-            id: 29,
-            online: 0,
-            uname: "原来是小民同学呀",
+    "code": 0,
+    "data": [
+        {
+            "avatar": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+            "createAt": 1618914288981,
+            "deleteTimestamp": 0,
+            "email": "hjm@163.com",
+            "id": 29,
+            "online": 0,
+            "uname": "原来是小民同学呀",
         }
     ],
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -137,8 +142,8 @@ Request
 
 ```json
 {
-    avatar: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-    uname: "test456"
+    "avatar": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+    "uname": "test456"
 }
 ```
 
@@ -146,18 +151,18 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: {
-        avatar: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-        createAt: 1618993248102,
-        deleteTimestamp: 0,
-        email: "test2@163.com",
-        id: 0,
-        online: 1,
-        token: "548D7B319EF9AB24CD91FBB8031B44E1",
-        uname: "test456",
+    "code": 0,
+    "data": {
+        "avatar": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+        "createAt": 1618993248102,
+        "deleteTimestamp": 0,
+        "email": "test2@163.com",
+        "id": 0,
+        "online": 1,
+        "token": "548D7B319EF9AB24CD91FBB8031B44E1",
+        "uname": "test456",
     },
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -167,7 +172,7 @@ Request
 
 ```json
 {
-    email: "test@163.com"
+    "email": "test@163.com"
 }
 ```
 
@@ -175,17 +180,17 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: {
-        avatar: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-        createAt: 1618847453422,
-        deleteTimestamp: 0,
-        email: "test@163.com",
-        id: 26,
-        uname: "何同学",
-        online: 0
+    "code": 0,
+    "data": {
+        "avatar": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+        "createAt": 1618847453422,
+        "deleteTimestamp": 0,
+        "email": "test@163.com",
+        "id": 26,
+        "uname": "何同学",
+        "online": 0
     },
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -197,10 +202,10 @@ Request
 
 ```json
 {
-    cmd: 15,
-    dstObj: "hjm@163.com",
-    msgType: 6,
-    userEmail: "test2@163.com"
+    "cmd": 15,
+    "dstObj": "hjm@163.com",
+    "msgType": 6,
+    "userEmail": "test2@163.com"
 }
 ```
 
@@ -208,13 +213,13 @@ Response 200
 
 ```json
 {
-    cmd: 15,
-    content: "test2@163.com 添加 hjm@163.com为好友",
-    createAt: 1618994048486,
-    deleteTimestamp: 0,
-    dstObj: "hjm@163.com",
-    msgType: 6,
-    userEmail: "test2@163.com"
+    "cmd": 15,
+    "content": "test2@163.com 添加 hjm@163.com为好友",
+    "createAt": 1618994048486,
+    "deleteTimestamp": 0,
+    "dstObj": "hjm@163.com",
+    "msgType": 6,
+    "userEmail": "test2@163.com"
 }
 ```
 
@@ -227,19 +232,19 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: {
-        0: {
-            avatar: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-            createAt: 1618914288981,
-            deleteTimestamp: 0,
-            email: "hjm@163.com",
-            id: 29,
-            online: 1,
-            uname: "原来是小民同学呀"
+    "code": 0,
+    "data": {
+        {
+            "avatar": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+            "createAt": 1618914288981,
+            "deleteTimestamp": 0,
+            "email": "hjm@163.com",
+            "id": 29,
+            "online": 1,
+            "uname": "原来是小民同学呀"
         }
     },
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -254,30 +259,30 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: {
-        0: {
-            cmd: 10,
-            content: "@(呵呵)",
-            createAt: 1618994297941,
-            deleteTimestamp: 0,
-            dstObj: "hjm@163.com",
-            id: 1674,
-            msgType: 1,
-            userEmail: "test2@163.com"
+    "code": 0,
+    "data": {
+        {
+            "cmd": 10,
+            "content": "@(呵呵)",
+            "createAt": 1618994297941,
+            "deleteTimestamp": 0,
+            "dstObj": "hjm@163.com",
+            "id": 1674,
+            "msgType": 1,
+            "userEmail": "test2@163.com"
         },
-        1: {
-            cmd: 10,
-            content: "this is a test",
-            createAt: 1618994306254,
-            deleteTimestamp: 0,
-            dstObj: "hjm@163.com",
-            id: 1675,
-            msgType: 1,
-            userEmail: "test2@163.com"
+        {
+            "cmd": 10,
+            "content": "this is a test",
+            "createAt": 1618994306254,
+            "deleteTimestamp": 0,
+            "dstObj": "hjm@163.com",
+            "id": 1675,
+            "msgType": 1,
+            "userEmail": "test2@163.com"
         }
     },
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -287,7 +292,7 @@ Request
 
 ```json
 {
-    dstObj: 1000
+    "dstObj": 1000
 }
 ```
 
@@ -295,30 +300,30 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: {
-        0: {
-            cmd: 11,
-            content: "@(惊恐)",
-            createAt: 1618994465192,
-            deleteTimestamp: 0,
-            dstObj: "1000",
-            id: 1676,
-            msgType: 1,
-            userEmail: "hjm@163.com"
+    "code": 0,
+    "data": {
+        {
+            "cmd": 11,
+            "content": "@(惊恐)",
+            "createAt": 1618994465192,
+            "deleteTimestamp": 0,
+            "dstObj": "1000",
+            "id": 1676,
+            "msgType": 1,
+            "userEmail": "hjm@163.com"
         },
-        1: {
-            cmd: 11,
-            content: "hello world!",
-            createAt: 1618994471825,
-            deleteTimestamp: 0,
-            dstObj: "1000",
-            id: 1677,
-            msgType: 1,
-            userEmail: "hjm@163.com"
+        {
+            "cmd": 11,
+            "content": "hello world!",
+            "createAt": 1618994471825,
+            "deleteTimestamp": 0,
+            "dstObj": "1000",
+            "id": 1677,
+            "msgType": 1,
+            "userEmail": "hjm@163.com"
         }
     },
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -330,7 +335,7 @@ Request
 
 ```json
 {
-    info: "软件架构"
+    "info": "软件架构"
 }
 ```
 
@@ -338,18 +343,18 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: [
-        0: {
-            createAt: 1618847453422,
-            deleteTimestamp: 0,
-            icon: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-            id: 1000,
-            name: "软件架构课程交流群",
-            ownerEmail: "hjm@163.com"
+    "code": 0,
+    "data": [
+        {
+            "createAt": 1618847453422,
+            "deleteTimestamp": 0,
+            "icon": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+            "id": 1000,
+            "name": "软件架构课程交流群",
+            "ownerEmail": "hjm@163.com"
         }
     ],
-    msg: ""
+    "msg": ""
 }
 ```
 
@@ -362,18 +367,18 @@ Response 200
 
 ```json
 {
-    code: 0,
-    data: [
-        0: {
-            createAt: 1618847453422,
-            deleteTimestamp: 0,
-            icon: "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
-            id: 1000,
-            name: "软件架构课程交流群",
-            ownerEmail: "hjm@163.com"
+    "code": 0,
+    "data": [
+        {
+            "createAt": 1618847453422,
+            "deleteTimestamp": 0,
+            "icon": "https://im-java.oss-cn-shenzhen.aliyuncs.com/images/1618985589853_5726bbf7.jpg",
+            "id": 1000,
+            "name": "软件架构课程交流群",
+            "ownerEmail": "hjm@163.com"
         }   
     ],
-    msg: ""
+    "msg": ""
 }
 ```
 
