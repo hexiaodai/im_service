@@ -1,9 +1,8 @@
-## 湖理，Java课程期末作业 & 软件架构期末作业
+## Java课程期末作业 & 软件架构期末作业
 
 ## 收获
 - 充分的理解 HTTP、Websocket协议之间的关系和区别
 - 了解 Redis 的基本用法，并且在实际项目中使用 Redis 处理用户的离线消息
-- Java课程 & 软件架构课程期末成绩拿到“优”
 
 ## 项目地址
 - 前端：https://github.com/hexiaodai/im_template.git
